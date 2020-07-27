@@ -1,4 +1,4 @@
-import { getElement, getElements, createElement, updateElement, deleteElement } from './datastore'
+import { getElement, getElements, createElement, updateElement, deleteElement } from '../shared/datastore'
 const element = "articles"
 
 export interface Article {

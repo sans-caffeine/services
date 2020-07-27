@@ -1,5 +1,5 @@
 import { APIGatewayProxyHandler, APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda'
-import { getArticle, getArticles, createArticle, updateArticle, deleteArticle } from '../shared/articles'
+import { getArticle, getArticles, createArticle, updateArticle, deleteArticle } from './articles'
 
 export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
   console.log('Received event:', JSON.stringify(event, null, 2))
