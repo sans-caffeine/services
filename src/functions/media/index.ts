@@ -1,6 +1,7 @@
 import AWS from 'aws-sdk' ;
 import { APIGatewayProxyHandler, APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda'
 import { getMedias, getMedia, createMedia, updateMedia, deleteMedia } from './media'
+import '../config/config'
 
 export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
   console.log('Received event:', JSON.stringify(event, null, 2))
@@ -73,13 +74,6 @@ export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEven
 }
 
 const env = process.env.environment ;
-
-const config = {
-  keys: { 
-		accessKeyId:"AKIAYKGVW2XIDGJXLYLQ"
-	,	secretAccessKey:"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"
-	}
-} 
 
 const s3 = new AWS.S3({signatureVersion: 'v4', signatureCache: false, accessKeyId: config.keys.accessKeyId, secretAccessKey: config.keys.secretAccessKey});
 
