@@ -1,7 +1,13 @@
 import AWS from 'aws-sdk' ;
 import { APIGatewayProxyHandler, APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda'
 import { getMedias, getMedia, createMedia, updateMedia, deleteMedia } from './media'
-import '../config/config'
+//import '../config/config'
+const config = {
+  keys: { 
+		accessKeyId:""
+	,	secretAccessKey:""
+	}
+} 
 
 export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
   console.log('Received event:', JSON.stringify(event, null, 2))
