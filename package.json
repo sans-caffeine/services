@@ -7,6 +7,7 @@
     "test": "echo \"Sorry, there aren't any tests\"; exit 1",
     "tsc": "tsc -b",
     "webpack": "webpack --progress",
+    "package": "./scripts/zip-function.sh",
     "build": "npm run tsc && npm run webpack"
   },
   "keywords": [],
